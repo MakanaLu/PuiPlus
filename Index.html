@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="คำนวณปริมาณปุ๋ยที่แม่นยำช่วยให้เกษตรกรสามารถวางแผนการใช้ปุ๋ยได้อย่างเหมาะสม ลดค่าใช้จ่ายที่ไม่จำเป็น" />
+  <meta name="keywords" content="คำนวณปริมาณปุ๋ย, เครื่องมือการเกษตร, การวางแผนการใช้ปุ๋ย, ลดค่าใช้จ่ายเกษตร, ปริมาณปุ๋ยที่ใช้ทั้งหมด" />
+  <meta name="author" content="PuiPlus Team" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="public/style.css">
+  <title>PuiPlus</title>
+</head>
+
+<body class="m-3">
+  <h1>คำนวนปริมาณปุ๋ย</h1>
+  <h3 class="text-secondary">
+    คำนวณปริมาณปุ๋ยที่แม่นยำช่วยให้เกษตรกรสามารถวางแผนการใช้ปุ๋ยได้อย่างเหมาะสมลดค่าใช้จ่ายที่ไม่จำเป็น
+  </h3>
+  <hr>
+  <form>
+    <h3>ขนาดพื้นที่ทั้งหมด</h3>
+    <section>
+      <label for="area_rai">ขนาดพื้นที่ (ไร่)</label>
+      <input class="form-control mb-3" type="number" id="area_rai" value="0" min="0" />
+      <label for="area_ngan">ขนาดพื้นที่ (งาน)</label>
+      <input class="form-control mb-3" type="number" id="area_ngan" value="0" min="0" />
+      <label for="area_square_wa">ขนาดพื้นที่ (ตารางวา)</label>
+      <input class="form-control mb-3" type="number" id="area_square_wa" value="0" min="0" />
+      <label for="area_square_meter">ขนาดพื้นที่ (ตารางเมตร)</label>
+      <input class="form-control mb-3" type="number" id="area_square_meter" value="0" min="0" />
+    </section>
+    <section>
+      <label for="area_unit">หน่วยวัดพื้นที่ (สำหรับคำนวนปริมาณปุ๋ย)</label>
+      <select class="form-select mb-3" name="area_unit" id="area_unit">
+        <option value="ไร่">ไร่</option>
+        <option value="งาน">งาน</option>
+        <option value="ตารางวา">ตารางงวา</option>
+        <option value="ตารางเมตร">ตารางเมตร</option>
+      </select>
+      <label for="FertilizerPerUnit">ปริมาณปุ๋ยต่อหน่วย 1 หน่วยวัดพื้นที่</label>
+      <input class="form-control mb-3" type="number" id="FertilizerPerUnit" value="0" min="0">
+      <label for="FertilizerUnit">หน่วยวัดปริมาณ</label>
+      <select class="form-select mb-3" id="FertilizerUnit">
+        <option value="1">กิโลกรัม</option>
+        <option value="1000">กรัม</option>
+      </select>
+      <div class="mb-3 d-flex justify-content-end">
+        <button class="btn btn-success mx-3" type="submit" id="calculate">คำนวนปริมาณปุ๋ย</button>
+        <button class="btn btn-outline-danger mx-3" type="reset" id="clear">เคลียร์</button>
+      </div>
+    </section>
+  </form>
+  <hr>
+  <section id="result">
+    <h2>ปริมาณปุ๋ยที่ใช้ทั้งหมด</h2>
+  </section>
+  <script src="public/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+</html>
